@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Diagnostics;
 using System.Data.Entity;
 
 namespace BLL
@@ -17,19 +17,32 @@ namespace BLL
             this.user = user;
         }
 
+        public Login(string username, string password)
+        {
+            user = new DTO.LoginUser();
+            user.Username = username;
+            user.Password = password;
+        }
+
         public bool Authenticate()
         {
             using (DAL.HisContext ctx = new DAL.HisContext())
             {
+                Trace.WriteLine("Querying database..." +
+                    "usename: " + user.Username + ", password: " + user.Password);
                 //return ctx.Users.Any(
                 //    u => u.Username == user.Username && 
                 //         u.Password == user.Password && 
                 //         u.Status != DAL.User.LoginStatus.invalid);
+
                 var queryResult = from u in ctx.Users
-                                  where u.Username == user.Username && 
-                                        u.Password == user.Password && 
+                                  where u.Username == user.Username &&
+                                        u.Password == user.Password &&
                                         u.Status != DAL.User.LoginStatus.invalid
                                   select u;
+
+                Trace.WriteLine("Query database finished, record number: "
+                    + queryResult.Count());
 
                 if (queryResult.Count() == 1)
                 {

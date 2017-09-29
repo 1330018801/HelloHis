@@ -25,3 +25,7 @@ C:\Users\wang-win\source\repos\HelloHis\GUI\bin\Debug\DAL.dll.config
 C:\Users\wang-win\source\repos\HelloHis\GUI\bin\Debug\EntityFramework.xml
 C:\Users\wang-win\source\repos\HelloHis\GUI\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\wang-win\source\repos\HelloHis\GUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\wang-win\source\repos\HelloHis\GUI\bin\Debug\CommClient.dll
+C:\Users\wang-win\source\repos\HelloHis\GUI\bin\Debug\Contracts.dll
+C:\Users\wang-win\source\repos\HelloHis\GUI\bin\Debug\CommClient.pdb
+C:\Users\wang-win\source\repos\HelloHis\GUI\bin\Debug\Contracts.pdb

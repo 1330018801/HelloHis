@@ -50,17 +50,20 @@ namespace GUI
                 return;
             }
             loginResult.Text = "Authenticating...";
+            
             user.Username = username.Text;
             user.Password = password.Text;
 
-            BLL.Login login = new BLL.Login(user);
+            //BLL.Login login = new BLL.Login(user);
+            CommClient.Login login = new CommClient.Login(user.Username, user.Password);
             if (login.Authenticate())
             {
                 loginResult.Text = "Login success!";
                 user.Status = DTO.LoginUser.LoginStatus.login;
                 loginBtn.IsEnabled = false;
                 logoutBtn.IsEnabled = true;
-            } else
+            }
+            else
             {
                 loginResult.Text = "Login failed!";
             }
