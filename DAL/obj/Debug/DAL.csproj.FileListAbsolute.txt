@@ -1,0 +1,13 @@
+C:\Users\wang-win\source\repos\HelloHis\DAL\bin\Debug\DAL.dll.config
+C:\Users\wang-win\source\repos\HelloHis\DAL\bin\Debug\DAL.dll
+C:\Users\wang-win\source\repos\HelloHis\DAL\bin\Debug\DAL.pdb
+C:\Users\wang-win\source\repos\HelloHis\DAL\bin\Debug\EntityFramework.dll
+C:\Users\wang-win\source\repos\HelloHis\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\wang-win\source\repos\HelloHis\DAL\bin\Debug\EntityFramework.xml
+C:\Users\wang-win\source\repos\HelloHis\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\wang-win\source\repos\HelloHis\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\wang-win\source\repos\HelloHis\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\wang-win\source\repos\HelloHis\DAL\obj\Debug\DAL.dll
+C:\Users\wang-win\source\repos\HelloHis\DAL\obj\Debug\DAL.pdb
+C:\Users\wang-win\source\repos\HelloHis\DAL\obj\Debug\DAL.Migrations.initial_db.resources
+C:\Users\wang-win\source\repos\HelloHis\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache

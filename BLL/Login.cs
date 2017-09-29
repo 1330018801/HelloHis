@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using System.Data.Entity;
+
+namespace BLL
+{
+    public class Login
+    {
+        DTO.LoginUser user;
+
+        public Login(DTO.LoginUser user)
+        {
+            this.user = user;
+        }
+
+        public bool Authenticate()
+        {
+            using (DAL.HisContext ctx = new DAL.HisContext())
+            {
+                //return ctx.Users.Any(
+                //    u => u.Username == user.Username && 
+                //         u.Password == user.Password && 
+                //         u.Status != DAL.User.LoginStatus.invalid);
+                var queryResult = from u in ctx.Users
+                                  where u.Username == user.Username && 
+                                        u.Password == user.Password && 
+                                        u.Status != DAL.User.LoginStatus.invalid
+                                  select u;
+
+                if (queryResult.Count() == 1)
+                {
+                    var u = queryResult.First();
+                    u.LastLogin = DateTime.Now;
+                    u.Status = DAL.User.LoginStatus.login;
+                    ctx.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public bool Logout()
+        {
+            using (DAL.HisContext ctx = new DAL.HisContext())
+            {
+                var queryResult = from u in ctx.Users
+                                  where u.Username == user.Username &&
+                                        u.Password == user.Password &&
+                                        u.Status == DAL.User.LoginStatus.login
+                                  select u;
+                if (queryResult.Count() == 1)
+                {
+                    var u = queryResult.First();
+                    u.Status = DAL.User.LoginStatus.logout;
+                    ctx.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+        }
+    }
+}
