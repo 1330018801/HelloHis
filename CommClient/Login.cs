@@ -26,10 +26,18 @@ namespace CommClient
 
         public bool Authenticate()
         {
-            LoginUser login = new LoginUser { };
+            LoginUser login = new LoginUser();
             login.Username = username;
             login.Password = password;
             return client.UserAuthenticate(login);
+        }
+
+        public bool Logout()
+        {
+            LoginUser login = new LoginUser();
+            login.Username = username;
+            login.Password = password;
+            return client.UserLogout(login);
         }
     }
 }

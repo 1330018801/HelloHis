@@ -73,7 +73,8 @@ namespace GUI
         {
             if (user.Status == DTO.LoginUser.LoginStatus.login)
             {
-                BLL.Login login = new BLL.Login(user);
+                //BLL.Login login = new BLL.Login(user);
+                CommClient.Login login = new CommClient.Login(user.Username, user.Password);
                 if (login.Logout())
                 {
                     loginResult.Text = user.Username + " logout success!";

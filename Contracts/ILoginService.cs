@@ -12,5 +12,8 @@ namespace CommContracts
     {
         [OperationContract]
         bool UserAuthenticate(LoginUser login);
+
+        [OperationContract]
+        bool UserLogout(LoginUser login);
     }
 }

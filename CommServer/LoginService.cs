@@ -24,5 +24,11 @@ namespace CommServer
             BLL.Login login = new BLL.Login(l.Username, l.Password);
             return login.Authenticate();
         }
+
+        public bool UserLogout(LoginUser l)
+        {
+            BLL.Login login = new BLL.Login(l.Username, l.Password);
+            return login.Logout();
+        }
     }
 }
